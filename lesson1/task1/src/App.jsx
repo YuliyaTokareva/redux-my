@@ -4,7 +4,7 @@ import { ThemeContext, themes } from './themes-context.js'
 
 class App extends Component {
     state = {
-        theme: themes.dark,
+        theme: themes.light,
     }
     toggleTheme = () => {
         const newTheme = this.state.theme === themes.dark ? themes.light : themes.dark
