@@ -14,5 +14,5 @@ class ThemedButton extends Component {
         )
     }
 }
-ThemeButton.contextType = ThemeContext
+ThemedButton.contextType = ThemeContext
 export default ThemedButton
