@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import Search from "./index.js";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.scss'
+import App from './App.jsx.js'
 
-const rootElement = document.querySelector("#root");
+const rootElement = document.querySelector('#root')
 
-ReactDOM.render(<Search name='Bob' />, rootElement);
+ReactDOM.render(<App />, rootElement)
