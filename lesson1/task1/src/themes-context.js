@@ -5,8 +5,8 @@ export const themes = {
         background: '#222222',
     },
     light: {
-        fontColor: '#222222',
-        background: '#ffffff',
+        fontColor: '#000000',
+        background: '#eeeeee',
     },
 }
 export const ThemeContext = React.createContext(themes.dark)
