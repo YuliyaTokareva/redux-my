@@ -5,10 +5,10 @@ class ThemedButton extends Component {
         return (
             <button
                 {...this.props}
-                // style={{
-                //     backgroundColor: this.context.background,
-                //     color: this.context.fontColor,
-                // }}
+                style={{
+                    backgroundColor: this.context.background,
+                    color: this.context.fontColor,
+                }}
                 className="btn"
             />
         )
