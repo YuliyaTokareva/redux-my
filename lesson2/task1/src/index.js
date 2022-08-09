@@ -23,11 +23,11 @@ const counterReduser = (state = 0, action) => {
     }
 }
 
-const store = createStore(counterReduser)
+// const store = createStore(counterReduser)
 
-store.dispatch(increment())
-console.log(store.getState())
-store.dispatch(increment())
-console.log(store.getState())
-store.dispatch(decrement())
-console.log(store.getState())
+// store.dispatch(increment())
+// console.log(store.getState())
+// store.dispatch(increment())
+// console.log(store.getState())
+// store.dispatch(decrement())
+// console.log(store.getState())
