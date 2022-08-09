@@ -1,43 +1,28 @@
-import { createStore } from 'redux'
-const INCREMENT = 'COUNTER/INCREMENT'
-const DECREMENT = 'COUNTER/DECREMENT'
-export const increment = () => {
-    return {
-        type: INCREMENT,
-    }
+import './index.scss'
+import store, { increment, decrement, reset } from './store'
+
+const resultElem = document.querySelector('.counter__result')
+const incrementBtn = document.querySelector('[data-action = "increment"]')
+const decrementBtn = document.querySelector('[data-action = "decrement"]')
+const resetBtn = document.querySelector('[data-action = "reset"]')
+
+const onIncrement = () => {
+    store.dispatch(increment())
 }
-export const decrement = () => {
-    return {
-        type: DECREMENT,
-    }
+const onDecrement = () => {
+    store.dispatch(decrement())
 }
-const initialState = {
-    value: 0,
-}
-const counterReduser = (state = initialState, action) => {
-    switch (action.type) {
-        case INCREMENT:
-            return {
-                ...state,
-                value: state.value + 1,
-            }
-        case DECREMENT:
-            return {
-                ...state,
-                value: state.value - 1,
-            }
-        default:
-            return state
-    }
+const onReset = () => {
+    store.dispatch(reset())
 }
 
-const store = createStore(counterReduser)
+incrementBtn.addEventListener('click', onIncrement)
+decrementBtn.addEventListener('click', onDecrement)
+resetBtn.addEventListener('click', onReset)
 
-// store.dispatch(increment())
-// console.log(store.getState())
-// store.dispatch(increment())
-// console.log(store.getState())
-// store.dispatch(decrement())
-// console.log(store.getState())
-
-export default store
+store.subscribe(() => {
+    const state = store.getState()
+    const currentValue = state.history.reduce((acc, value) => acc + value, 0)
+    const historyString = state.history.join(' ')
+    resultElem.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`
+})
