@@ -24,10 +24,11 @@ store.subscribe(() => {
     const state = store.getState()
 
     const currentValue = state.history.reduce((acc, value) => {
-        console.log(value)
-        return acc + value
+        console.log(Number(value))
+        return acc + Number(value)
     }, 0)
     console.log(currentValue)
-    const historyString = state.history.join(' ')
+    console.log(state.history)
+    const historyString = state.history.join('')
     resultElem.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`
 })
