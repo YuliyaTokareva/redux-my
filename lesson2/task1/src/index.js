@@ -1,12 +1,12 @@
 import { createStore } from 'redux'
 // const INCREMENT = 'COUNTER/INCREMENT'
 // const DECREMENT = 'COUNTER/DECREMENT'
-export const incrementAction = () => {
+export const increment = () => {
     return {
         type: 'COUNTER/INCREMENT',
     }
 }
-export const decrementAction = () => {
+export const decremen = () => {
     return {
         type: 'COUNTER/DECREMENT',
     }
