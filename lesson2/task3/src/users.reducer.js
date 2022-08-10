@@ -1,4 +1,4 @@
-import { ADD, DELETE } from './users.reducer'
+import { ADD, DELETE } from './users.actions'
 import { initialState } from './store'
 
 const counterReduser = (state = initialState, action) => {
