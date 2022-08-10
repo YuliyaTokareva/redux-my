@@ -5,12 +5,12 @@ const counterReduser = (state = initialState, action) => {
         case ADD:
             return {
                 ...state,
-                userList: state.userList.concat(action.payload),
+                usersList: state.usersList.concat(action.payload),
             }
         case DELETE:
             return {
                 ...state,
-                userList: state.userList.filter((user) => {
+                usersList: state.usersList.filter((user) => {
                     user.id !== action.payload
                 }),
             }
