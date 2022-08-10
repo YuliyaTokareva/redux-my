@@ -22,10 +22,11 @@ const userReduser = (state = initialState, action) => {
             const newList = state.usersList.map((user) => {
                 if (user.id === action.payload.userId) {
                     return {
-                        ...state,
+                        ...user,
                         ...action.payload.userData,
                     }
                 }
+                return user
             })
             return {
                 ...state,

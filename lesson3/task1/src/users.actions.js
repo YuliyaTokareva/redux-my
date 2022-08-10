@@ -1,6 +1,6 @@
 export const ADD_USER = 'USER/ADD'
 export const DELETE_USER = 'USER/DELETE'
-export const UPDATE_USER = 'USER/DELETE'
+export const UPDATE_USER = 'USER/UPDATE'
 
 export const addUser = (userData) => {
     return {
@@ -16,7 +16,7 @@ export const deleteUser = (userId) => {
 }
 export const updateUser = (userId, userData) => {
     return {
-        type: DELETE_USER,
+        type: UPDATE_USER,
         payload: { userId, userData },
     }
 }
