@@ -3,7 +3,7 @@ import { languageReduser } from './language.reducer'
 import cartReduser from './cart.reducer'
 import userReduser from './user.reducer'
 const appReduser = combineReducers({
-    counter: languageReduser,
+    language: languageReduser,
     user: userReduser,
     cart: cartReduser,
 })
