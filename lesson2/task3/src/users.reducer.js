@@ -1,5 +1,6 @@
-import { ADD, DELETE } from './users.reduser'
+import { ADD, DELETE } from './users.reducer'
 import { initialState } from './store'
+
 const counterReduser = (state = initialState, action) => {
     switch (action.type) {
         case ADD:

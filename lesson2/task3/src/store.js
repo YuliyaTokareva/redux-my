@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
-import counterReduser from './users.reduser'
+import counterReduser from './users.reducer'
+
 export const initialState = {
     usersList: [],
 }
