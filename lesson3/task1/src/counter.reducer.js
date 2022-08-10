@@ -7,17 +7,17 @@ export const counterReduser = (state = initialState, action) => {
         case INCREMENT:
             return {
                 ...state,
-                state: initialState.state + 1,
+                counter: initialState.counter + 1,
             }
         case DECREMENT:
             return {
                 ...state,
-                state: initialState.state - 1,
+                counter: initialState.counter - 1,
             }
         case RESET:
             return {
                 ...state,
-                state: 0,
+                counter: 0,
             }
         default:
             return state
