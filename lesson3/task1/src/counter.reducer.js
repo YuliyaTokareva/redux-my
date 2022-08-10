@@ -1,6 +1,6 @@
 import { INCREMENT, DECREMENT, RESET } from './counter.actions'
 const initialState = {
-    state: 0,
+    counter: 0,
 }
 export const counterReduser = (state = initialState, action) => {
     switch (action.type) {
