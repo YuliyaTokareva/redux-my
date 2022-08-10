@@ -12,7 +12,7 @@ const counterReduser = (state = initialState, action) => {
             return {
                 ...state,
                 usersList: state.usersList.filter((user) => {
-                    user.id !== action.payload
+                    return user.id !== action.payload
                 }),
             }
         default:
