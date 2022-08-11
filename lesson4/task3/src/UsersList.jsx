@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import User from './User.jsx'
+import * as userActions from './users.actions'
 import Pagination from './Pagination.jsx'
 
 class UsersList extends Component {
     render() {
-        const { users, currentPage, toIterate } = this.props
-
+        const { users, currentPage, nextPage, prevPage } = this.props
+        const totalItems = Math.ceil(users.length / 3)
         return (
             <div>
-                <Pagination />
+                <Pagination
+                    totalItems={totalItems}
+                    currentPage={currentPage}
+                    goNext={nextPage}
+                    goPrev={prevPage}
+                />
                 <ul className="users">
                     {users.map((user, index) => {
                         // if (index >= toIterate && index < toIterate + 3) {
@@ -30,10 +36,10 @@ const mapState = (state) => {
         currentPage: state.users.currentPage,
     }
 }
-// const mapDispatch = {
-//     nextPage: userActions.nextPage,
-//     prevPage: userActions.prevPage,
-// }
-const connector = connect(mapState)
+const mapDispatch = {
+    nextPage: userActions.nextPage,
+    prevPage: userActions.prevPage,
+}
+const connector = connect(mapState, mapDispatch)
 const ConnctedUsersList = connector(UsersList)
 export default ConnctedUsersList
