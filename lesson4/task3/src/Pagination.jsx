@@ -7,21 +7,19 @@ class Pagination extends Component {
     render() {
         const { users, currentPage, nextPage, prevPage } = this.props
         const totalItems = Math.ceil(users.length / 3)
-        const isPrevPageAvailable = currentPage === totalItems
-        const isNextPageAvailable = currentPage === 0
-
+        const isPrevPageAvailable = currentPage === 0
+        const isNextPageAvailable = currentPage + 1 === totalItems
+        //console.log(currentPage + 1, totalItems)
         return (
-            <>
-                <div className="pagination">
-                    <button className="btn" onClick={prevPage} disabled={isNextPageAvailable}>
-                        {isNextPageAvailable ? '' : '←'}
-                    </button>
-                    <span className="pagination__page">{currentPage}</span>
-                    <button className="btn" onClick={nextPage} disabled={isPrevPageAvailable}>
-                        {currentPage === totalItems - 1 ? '' : '→'}
-                    </button>
-                </div>
-            </>
+            <div className="pagination">
+                <button className="btn" onClick={prevPage} disabled={isPrevPageAvailable}>
+                    {isPrevPageAvailable ? '' : '←'}
+                </button>
+                <span className="pagination__page">{currentPage + 1}</span>
+                <button className="btn" onClick={nextPage} disabled={isNextPageAvailable}>
+                    {isNextPageAvailable ? '' : '→'}
+                </button>
+            </div>
         )
     }
 }
@@ -29,7 +27,7 @@ class Pagination extends Component {
 const mapState = (state) => {
     return {
         users: state.users.usersList,
-        currentPage: state.users.currentPage + 1,
+        currentPage: state.users.currentPage,
     }
 }
 const mapDispatch = {
