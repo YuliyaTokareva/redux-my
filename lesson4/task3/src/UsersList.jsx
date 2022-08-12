@@ -7,11 +7,13 @@ import Pagination from './Pagination.jsx'
 class UsersList extends Component {
     render() {
         const { users, currentPage, nextPage, prevPage } = this.props
-        const totalItems = Math.ceil(users.length / 3)
+        //const totalItems = Math.ceil(users.length / 3)
+        // const itemsPerPage = 3
         return (
             <div>
                 <Pagination
-                    totalItems={totalItems}
+                    totalItems={users.length}
+                    itemsPerPage={3}
                     currentPage={currentPage}
                     goNext={nextPage}
                     goPrev={prevPage}
