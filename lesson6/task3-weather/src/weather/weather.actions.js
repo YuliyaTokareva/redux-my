@@ -8,7 +8,7 @@ export const cityDataRecived = (cityData) => {
         },
     }
 }
-export const getWatherData = () => {
+export const getWeatherData = () => {
     return function (dispatch) {
         getCityData().then((cityData) => {
             dispatch(cityDataRecived(cityData))

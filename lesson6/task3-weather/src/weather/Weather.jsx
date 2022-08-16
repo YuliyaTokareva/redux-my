@@ -5,11 +5,8 @@ import { cityDataSelector } from './weather.selectors.js'
 import * as cityActions from './weather.actions.js'
 
 class Weather extends Component {
-    state = {
-        weather: [],
-    }
     componentDidMount() {
-        this.props.getWatherData()
+        this.props.getWeatherData()
     }
 
     render() {
@@ -36,10 +33,10 @@ class Weather extends Component {
     }
 }
 Weather.propTypes = {
-    getWatherData: PropTypes.func.isRequired,
+    getWeatherData: PropTypes.func.isRequired,
 }
 const mapDispatch = {
-    getWatherData: cityActions.getWatherData,
+    getWeatherData: cityActions.getWeatherData,
 }
 const mapState = (state) => {
     return {
