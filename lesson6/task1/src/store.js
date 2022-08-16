@@ -8,10 +8,11 @@ const logger = (store) => (next) => (action) => {
     console.groupEnd()
     return result
 }
-
+const composeEnhansers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
     counterReduser,
-    applyMiddleware(logger)
+    composeEnhansers(applyMiddleware(logger))
+
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
