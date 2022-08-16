@@ -2,9 +2,8 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import cityReducer from './weather/weather.reducer'
 const reducer = combineReducers({
-    cityData: cityReducer,
+    wether: cityReducer,
 })
-
 const composeEnhansers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhansers(applyMiddleware(thunk)))
 
