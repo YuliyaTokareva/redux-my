@@ -11,7 +11,6 @@ export const cityDataRecived = (cityData) => {
 export const getWatherData = () => {
     return function (dispatch) {
         getCityData().then((cityData) => {
-            console.log(cityData)
             dispatch(cityDataRecived(cityData))
         })
     }
